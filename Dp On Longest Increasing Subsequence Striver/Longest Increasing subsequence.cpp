@@ -1,6 +1,26 @@
 #include <stdc/bits++.h>
 using name space std;
+//Reacurssive Approach
 
+int getAns(int ind, int prev, int arr[], int n){
+
+    if(ind == n) return 0;
+
+    int len = 0+ getAns(ind+1, prev, arr,n);
+
+    if(prev == -1 || arr[ind] >arr[prev]){
+
+        len = max(len , 1+ getAns(ind+1,ind,arr,n));
+    }
+
+    return len;
+}
+
+int lis(int arr[], int n){
+    return getAns(0,-1,arr,n);
+}
+
+//memoisation approach
 int getAns(int arr[], int n, int ind, int prev, ,vector<vector<int>>&dp){
 
     if(ind == n)
