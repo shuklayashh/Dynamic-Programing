@@ -54,7 +54,7 @@ int main(){
     int arr[] ={10, 9, 2, 5, 3, 7, 101, 18};
     int n = sizeof(arr) / sizeof(arr[0]);
 
-    cout << "The length of the longest increasing subsequence is " << longestIncreasingSubsequence(arr, n);
+    cout << "The length of the longest increasing subsequence is " << lis(arr, n);
     
     return 0;
 }
