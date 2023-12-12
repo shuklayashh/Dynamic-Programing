@@ -1,4 +1,4 @@
-#include <stdc/bits++.h>
+#include <bits/stdc++.h>
 using name space std;
 //Reacurssive Approach
 
