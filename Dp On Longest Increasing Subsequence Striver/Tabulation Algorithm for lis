@@ -24,3 +24,7 @@ int lis(int arr[], int n){
     }
     return ans;
 }
+
+
+// TC - O(N*N)
+// space - O(N)
