@@ -31,5 +31,8 @@ int main(){
     cout << "The length of the longest increasing subsequence is " << lis(arr, n);
 
     return 0;
-    
+
     }
+
+    T.C = O(N*LOG(N))
+    S.C = O(N);
