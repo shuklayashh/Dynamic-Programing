@@ -83,7 +83,44 @@ int findMinimumcuts(int n , vector<int>& cuts){
 
 // TIME _COMPLEXITY - O(N*N*N) reason - because we are using a two vatiable i and j which will take  N*N time  and inside this loop we run the loop over N times so that the compexity is this 
 // SPACE COMPLEXITY - O(N*N + O(N  rerason - we are using  auxiliary recursive extra space O(N and a 2D array (O(N*N))
+
+
+// TABULATION APPROACH
+
+int   findMinimumcuts(int n , vector<int>& cuts){
+
+    int c = cuts.size();
+
+    cuts.push_back(n);
+    cuts.insert(cuts.begin(),0);
+    sort(cuts.begin(),cuts.end());
+
+
+    vector<vector<int>>dp(c+2, vector<int>(c+2,0));
+
+    for(int i = c; i >= 1; i--){
+        for(int j = 1; j <= c; j++){
+
+            if( i > j) continue;
+
+            int mini = INT_MAX;
+
+
+            for(int ind = i; ind <= j;  ind ++){
+
+                int ans = cuts[j+1] - cuts[i-1] + dp[i][ind-1] + dp[ind+1][j];
+
+                mini = min( mini,ans);
+            }
+
+            dp[i][j] = mini;
+        }
+    }
+
+    return dp[1][c];
+}
 int main(){
+
 
      vector<int> cuts = {3, 5, 1, 4};
     
