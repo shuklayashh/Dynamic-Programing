@@ -62,12 +62,12 @@ int  f(int i, int j, vector<int>& cuts, vector<vector<int>>&dp){
 
     for(int ind = i; ind <= j; ind++){
 
-        int ans = cuts[j+1] - cuts[i -1] + f(i,ind-1,cuts) + f(ind+1, j,cuts);
+        int ans = cuts[j+1] - cuts[i -1] + f(i,ind-1,cuts,dp) + f(ind+1, j,cuts,dp);
 
         mini = min( mini , ans);
     }
 
-    return mini;
+    return dp[i][j] =mini;
 }
 
 int findMinimumcuts(int n , vector<int>& cuts){
@@ -78,7 +78,7 @@ int findMinimumcuts(int n , vector<int>& cuts){
 
       vector<vector<int>> dp(c + 1, vector<int>(c + 1, -1));
 
-      return f(1,c,cuts);
+      return f(1,c,cuts,dp);
 }
 
 // TIME _COMPLEXITY - O(N*N*N) reason - because we are using a two vatiable i and j which will take  N*N time  and inside this loop we run the loop over N times so that the compexity is this 
