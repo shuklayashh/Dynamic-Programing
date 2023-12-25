@@ -18,7 +18,7 @@ int f(int i, int j, vector<int>&cuts){
         mini = min(mini,ans);
     }
 
-    return ans;
+    return mini;
 }
 
 int findMinimumcuts(int n, vector<int>&cuts){
@@ -126,7 +126,7 @@ int main(){
     
     int n = 7;
 
-    cout << "The minimum cost incurred is: " << findMinimumcuts(n, c, cuts) << endl;
+    cout << "The minimum cost incurred is: " << findMinimumcuts(n,cuts) << endl;
 
     return 0;
 }

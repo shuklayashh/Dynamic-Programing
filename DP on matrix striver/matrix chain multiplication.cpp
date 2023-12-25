@@ -23,7 +23,7 @@ int f(vector<int>& arr, int i,int j){
 int matrixMultiplication(vector<int>& arr, int n){
 
     int i = 0;
-    int j = N -1;
+    int j = n -1;
 
     return f(arr,i,j);
 }
@@ -63,13 +63,13 @@ int f(vector<int>& arr, int i,int j,vector<vector<int>>& dp){
     return maxi;
 }
 int matrixMultiplication(vector<int>& arr, int n){
-vector<vector<int>> dp(N,vector<int>(N,-1));
+vector<vector<int>> dp(n,vector<int>(n,-1));
     int i = 0;
-    int j = N -1;
+    int j = n-1;
 
     return f(arr,i,j,dp);
 }
 
 
-Time comlexcity : O(N*N*N);// Reason - there are N*N states in which we are explixitly run a loop inside the function N times  
-Space Complexity : O(N*N) // reason - we are using auxiliary recursive  stack space 
+//Time comlexcity : O(N*N*N);// Reason - there are N*N states in which we are explixitly run a loop inside the function N times  
+//Space Complexity : O(N*N) // reason - we are using auxiliary recursive  stack space 
