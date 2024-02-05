@@ -50,7 +50,7 @@ int main()
     addEdge(adj,2, 3); 
     addEdge(adj,3, 1);  
   
-    topologicalSort(adj,V);
+    topological(adj,V);
 
 	return 0; 
 } 
